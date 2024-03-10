@@ -34,6 +34,7 @@ class HBNBCommand(cmd.Cmd):
             cls_name = args[0]
             command = args[1].split('(')
             method = command[0]
+            instance_id = command[1].split(')')[0]
 
             methods = {
                 'all': self.do_all,
@@ -44,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
             }
 
             if method in methods.keys():
-                return methods[method]("{} {}".format(cls_name, ''))
+                return methods[method]("{} {}".format(cls_name, instance_id))
         except IndexError:
             print("*** Unkown syntax: {}".format(line))
 
@@ -197,6 +198,7 @@ class HBNBCommand(cmd.Cmd):
                 print(count)
         else:
             print("** class name missing **")
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
