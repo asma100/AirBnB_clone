@@ -12,15 +12,15 @@ import os
 
 
 class TestFileStorage(unittest.TestCase):
-    ''' Unittest for FileStorage class '''
+    """ Unittest for FileStorage """
 
     def test_Instantiation(self):
-        ''' checks instance is of class BaseModel '''
-        obj = FileStorage()
-        self.assertIsInstance(obj, FileStorage)
+        """ instance is of BaseModel """
+        self.FileStorage = FileStorage()
+        self.assertIsInstance(self.FileStorage, FileStorage)
 
     def test_Access(self):
-        ''' test read-write access permissions '''
+        """  read-write access permissions """
         rd = os.access('models/engine/file_storage.py', os.R_OK)
         self.assertTrue(rd)
         wr = os.access('models/engine/file_storage.py', os.W_OK)
@@ -28,22 +28,11 @@ class TestFileStorage(unittest.TestCase):
         ex = os.access('models/engine/file_storage.py', os.X_OK)
         self.assertTrue(ex)
 
-    def test_new(self):
-        """
-        Tests method: new (saves new object into dictionary)
-        """
-        m_storage = FileStorage()
-        instances_dic = m_storage.all()
-        Aman = User()
-        Aman.id = 999999
-        Aman.name = "Aman"
-        m_storage.new(Aman)
-        key = Aman.__class__.__name__ + "." + str(Aman.id)
-        self.assertIsNotNone(instances_dic[key])
+    
 
     def test_reload(self):
         """
-        Tests method: reload (reloads objects from string file)
+        Tests method: reload (reloads oects from string file)
         """
         a_storage = FileStorage()
         try:
@@ -56,26 +45,37 @@ class TestFileStorage(unittest.TestCase):
             for line in r:
                 self.assertEqual(line, "{}")
         self.assertIs(a_storage.reload(), None)
-
+    def test_new(self):
+        """
+        new 
+        """
+        m_stor = FileStorage()
+        instances_dic = m_stor.all()
+        Aman = User()
+        Aman.id = 999999
+        Aman.name = "Aman"
+        m_stor.new(Aman)
+        k = Aman.__class__.__name__ + "." + str(Aman.id)
+        self.assertIsNotNone(instances_dic[k])
     def test_funcdocs(self):
-        ''' testing functions docstring '''
+        """ docstring """
         for func in dir(FileStorage):
             self.assertTrue(len(func.__doc__) > 0)
 
     def test_save(self):
-        ''' tests save method'''
-        obj = FileStorage()
-        new_obj = BaseModel()
-        obj.new(new_obj)
-        dict1 = obj.all()
-        obj.save()
-        obj.reload()
-        dict2 = obj.all()
-        for key in dict1:
-            key1 = key
-        for key in dict2:
-            key2 = key
-        self.assertEqual(dict1[key1].to_dict(), dict2[key2].to_dict())
+        """ save method"""
+        o = FileStorage()
+        new_o = BaseModel()
+        o.new(new_o)
+        dict1 = o.all()
+        o.save()
+        o.reload()
+        dict2 = o.all()
+        for k in dict1:
+            k1 = k
+        for k in dict2:
+            k2 = k
+        self.assertEqual(dict1[k1].to_dict(), dict2[k2].to_dict())
 
 
 if __name__ == '__main__':
