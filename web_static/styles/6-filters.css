@@ -1,0 +1,82 @@
+.filters {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+  button {
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #FF5A5F;
+    height: 48px;
+    width: 20%;
+    border: 0px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+  }
+  
+  .filters button:hover {
+    opacity: 90%;
+  }
+  
+  .locations,
+  .amenities {
+    height: 100%;
+    width: 25%;
+    border-right: solid 1px #DDDDDD;
+    position: relative; 
+  }
+  
+  .amenities {
+    margin-right: auto;
+  }
+  
+  .popover {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    background-color: #FAFAFA;
+    width: 100%; 
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+  }
+  
+  .locations .popover li:first-child h2 { /* State name in h2 */
+    font-size: 16px;
+    margin: 10px; 
+  }
+  .filters h3 {
+    margin-bottom: 0;
+    margin-left: 15%;
+    text-align: left;
+    font-weight: 600;
+}
+
+.filters h4 {
+    margin-top: 0;
+    margin-left: 15%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+}
+  .locations:hover .popover,
+  .amenities:hover .popover {
+    display: block; /* Show popover on hover */
+  }
+  
+  .popover ul { /* Style nested ul for cities */
+    padding: 10px; /* Add padding for the nested list */
+  }
