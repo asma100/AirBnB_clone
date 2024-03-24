@@ -1,0 +1,13 @@
+/* styles/103-header.css */
+
+header {
+    background-color: #fff; /* Maintain light background for contrast */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold; /* Emphasize logo text */
+  }
+  

@@ -1,0 +1,36 @@
+/* styles/103-common.css */
+
+body {
+    font-family: Arial, sans-serif; /* Choose a common, readable font */
+    font-size: 16px; /* Set a base font size */
+    line-height: 1.5; /* Improve readability */
+    color: #333; /* Use dark text for better contrast */
+    background-color: #fff; /* Use a light background for better contrast */
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #007bff; /* Use a clear link color */
+    text-decoration: none; /* Remove underline decoration */
+    transition: color 0.3s ease; /* Add smooth color transition on hover */
+  }
+  
+  a:hover {
+    color: #0056b3; /* Change link color on hover */
+  }
+  
+  button {
+    background-color: #007bff; /* Use a clear button color */
+    color: #fff; /* Use white text for contrast */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Indicate clickable element */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Change button color on hover */
+  }
+  

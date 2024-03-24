@@ -1,0 +1,35 @@
+/* styles/103-filters.css & 100-places.css */
+
+.filters {
+    background-color: #f5f5f5; /* Use a lighter background */
+    border: 1px solid #ddd; /* Add a border for definition */
+    padding: 20px;
+    margin-bottom: 20px; /* Add space after filters */
+  }
+  
+  .filters h3 {
+    font-size: 18px; /* Use a heading size */
+  }
+  
+  .filters ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .filters li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add focus styles for interactive elements */
+  .filters button:focus,
+  .amenities button:focus {
+    outline: 2px solid #007bff; /* Highlight focused element */
+  }
+  
+  /* Icons within filters and amenities */
+  .filters svg,
+  .amenities svg {
+    fill: #333; /* Use dark color for contrast */
+  }
+  
